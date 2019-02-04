@@ -11,16 +11,16 @@
 #
 # Inputs:
 #
-#		- time_input	 						The interstellar object's initial condition is provided at time t0, the final time to integrate to endtime, the time step used when integrating dt. Format: t0/endtime/dt
-#		- condition							Boolean value for if the integration run is a first low-resolution run or a higher-resolution final run.
-#		- **kwargs:
-#			- trajec / traject_fine				The pre-calculated trajectory dictionary of the interstellar object. Either coarse resolution for the first run, or fine resolution for later runs.
-#			- gaia_fle								The Gaia file of stars to integrate and check distance between the ISO. Given at t0, the time of the ISO's initial conditions.
-#			- _empty_ / cndts					For high-resolution runs, a dictionary of candidate stars found during the first coarse resolution run. To be used to focus in on stars to integrate in high resolution.
+#	- time_input	 			The interstellar object's initial condition is provided at time t0, the final time to integrate to endtime, the time step used when integrating dt. Format: t0/endtime/dt
+#	- condition				Boolean value for if the integration run is a first low-resolution run or a higher-resolution final run.
+#	- **kwargs:
+#		- trajec / traject_fine		The pre-calculated trajectory dictionary of the interstellar object. Either coarse resolution for the first run, or fine resolution for later runs.
+#		- gaia_fle			The Gaia file of stars to integrate and check distance between the ISO. Given at t0, the time of the ISO's initial conditions.
+#		- _empty_ / cndts		For high-resolution runs, a dictionary of candidate stars found during the first coarse resolution run. To be used to focus in on stars to integrate in high resolution.
 #
 # Outputs:
 #
-#		- candidates/_firstpass	 In first low-resolution run, dictionary of possible candidates within the average distance traversed by a star in the time step. / Dictionary of the ID, state vector, closest encounter distance^2 and time of closest encounter of each star that passes within tight distance bounds of the ISO.
+#	- candidates/_firstpass	 In first low-resolution run, dictionary of possible candidates within the average distance traversed by a star in the time step. / Dictionary of the ID, state vector, closest encounter distance^2 and time of closest encounter of each star that passes within tight distance bounds of the ISO.
 #
 # Author: Tim Hallatt
 # Date: February 3, 2019
