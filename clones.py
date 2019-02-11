@@ -11,14 +11,14 @@
 #
 # Inputs:
 #
-#			- time_input											The interstellar object's initial condition is provided at time t0; The final time to integrate to endtime, the time step used when integrating dt. Format: t0/endtime/dt
-#			- clonefile												The .csv file containing the initial conditions for each clone of the interstellar object. Format: x,y,z,vx,vy,vz,ID. Given in ecliptic cartesian coordinates.
-#			- cndtsfile												The output file containing the candidates' ID, state, distance^2, time, and relative velocity of the clostest encounter.
-#			- gaiafile												The astrometric data for all stars, at -10 000 yrs.
+#	- time_input		The interstellar object's initial condition is provided at time t0; The final time to integrate to endtime, the time step used when integrating dt. Format: t0/endtime/dt
+#	- clonefile		The .csv file containing the initial conditions for each clone of the interstellar object. Format: x,y,z,vx,vy,vz,ID. Given in ecliptic cartesian coordinates.
+#	- cndtsfile		The output file containing the candidates' ID, state, distance^2, time, and relative velocity of the clostest encounter.
+#	- gaiafile		The astrometric data for all stars, at -10 000 yrs.
 #
 # Outputs:
 #
-#			- clonesfile											Dictionary of the spread in relative velocity and distance for each candidate star, at +/- 20 000 years about the star's time of encounter. Format: {ID1: ((time1, distance, and relative velocity, for all clones), (time2, distance 2, ...)), ID2: ...}
+#	- clonesfile		Dictionary of the spread in relative velocity and distance for each candidate star, at +/- 20 000 years about the star's time of encounter. Format: {ID1: ((time1, distance, and relative velocity, for all clones), (time2, distance 2, ...)), ID2: ...}
 #
 # Author: Tim Hallatt
 # Date: February 10, 2019
@@ -234,5 +234,3 @@ clones_file = input("Please enter the name of the clones initial conditions file
 cndts_file = input("Please enter the candidates file (format: candidates.pkl) : ")
 
 cloneEnounters(times, clones_file, cndts_file, gaia_file)
-
-#cloneEnounters(np.array([-1.e4, -10.e6, -1.e4]), "clones_init.csv", "candidates.pkl", "Gaia_updated.pkl")
