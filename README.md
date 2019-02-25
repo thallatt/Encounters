@@ -4,7 +4,7 @@ Python package for identifying encounter candidates for interstellar objects.
 # Scripts and Functions:
 
 
-Initialize.py:
+# Initialize.py:
 initialize() is designed to initialize the data used for dynamical integration of an interstellar object and surrounding stars. It throws out stars which are too far away to be considered plausible candidates, and integrates the stars in the data set to correct for any time offset between the initial conditions of the ISO and the stars.
 
  Inputs:
@@ -19,7 +19,7 @@ initialize() is designed to initialize the data used for dynamical integration o
 			- updated_gaia				Dictionary of the states of each star at the same epoch as the ISO's initial conditions; {source_id : [rho, vrho, phi, vphi, z, vz]}. Coordinates in galactocentric cylindrical.
 
 
-Candidates.py:
+# Candidates.py:
 encounters() integrates the motion of a set of stars while checking the distance between each star and an interstellar object at each time step. The distance must be less than a pre-determined value which defines the resolution of the integration routine.
 
  Inputs:
@@ -36,7 +36,7 @@ encounters() integrates the motion of a set of stars while checking the distance
 		- candidates/_firstpass	 					In first low-resolution run, dictionary of possible candidates within the average distance traversed by a star in the time step. or: Dictionary of the ID, state vector, closest encounter distance^2 and time of closest encounter of each star that passes within tight distance bounds of the ISO.
 
 
-Clones.py:
+# Clones.py:
 cloneEncounters() integrates the motion of a set of clones with similar initial conditions to a given interstellar object. It then integrates the motion of a set of candidate stars of origin, and calculates the relative velocity and distance between each star and the set of clones through +/- 20 000 years about the initial estimated time of encounter.
 
  Inputs:
@@ -51,7 +51,7 @@ cloneEncounters() integrates the motion of a set of clones with similar initial 
 			- savefile			Dictionary of the spread in relative velocity and distance for each candidate star, at +/- 20 000 years about the star's time of encounter. Format: {ID1: ((time1, distance, and relative velocity, for all clones), (time2, distance 2, ...)), ID2: ...}
 
 
-analyzeClones.py:
+# analyzeClones.py:
 script to read in the spreads in clone distance and relative speed for each candidate star in candidates_7M.pkl, then calculate the top 32 stars which minimize these two values best. Then export these stars' clone information to a csv and graph these stars' and their clones' distance and speeds without error bars.
 
  Inputs:
