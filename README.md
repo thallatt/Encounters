@@ -1,7 +1,7 @@
 # Encounters
 Python package for identifying encounter candidates for interstellar objects.
 
-# Scripts and Functions:
+# Scripts and Functions
 
 
 # Initialize.py:
