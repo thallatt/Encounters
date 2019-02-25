@@ -52,15 +52,15 @@ cloneEncounters() integrates the motion of a set of clones with similar initial 
 
 
 # analyzeClones.py:
-script to read in the spreads in clone distance and relative speed for each candidate star in candidates_7M.pkl, then calculate the top 32 stars which minimize these two values best. Then export these stars' clone information to a csv and graph these stars' and their clones' distance and speeds without error bars.
+script to read in the spreads in clone distance and relative speed for each candidate star in candidates_7M.pkl, then calculate the top N stars which minimize these two values best.
 
  Inputs:
 
 			- clones_compare_100.pkl		Dictionary of clone spreads in distance and relative speed for candidates identified in candidates_7M.py.
+			- N					The top N stars are saved.
 
  Outputs:
 
-			- candidate_data.csv 				.csv file of the statistics of the clone encounter distributions for the top 32 candidates.
-			- graph										Distance vs. relative speed graph plotted in Seaborn, without error bars.
+			- candidate_data.csv 				.csv file of the statistics of the clone encounter distributions for the top candidates.
 
 NOTE: the graphing is done in clone_plot.gnu, which reads in candidate_data.csv and plots with error bars.
