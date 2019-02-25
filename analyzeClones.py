@@ -36,8 +36,6 @@ import multiprocessing_on_dill
 from functools import partial
 from itertools import islice
 from collections import ChainMap
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 with open("star_iso_clones.pkl","rb") as x:
 		clone_data = dill.load(x)
@@ -104,12 +102,3 @@ top_cands_file.close()
 
 df = pd.DataFrame.from_dict(top_candidates_dist, orient = "index")
 df.to_csv("candidate_data.csv")
-
-# plot
-df = pd.read_csv("candidate_data.csv", index_col = 0)
-plt.rcParams['mathtext.fontset'] = 'cm'
-plt.rcParams['font.family'] = 'STIXGeneral'
-sns.set(style='darkgrid', font_scale = 1.2, rc = plt.rcParams)
-g = sns.jointplot(x = "speed_median", y = "dist_median", data = df)#.plot_joint(sns. #marginal_kws = {"hist_kws": {"edgecolor":"black"}}
-g.set_axis_labels("$\mathbf{Relative}$ $\mathbf{Speed}$ $\mathbf{[km/s]}$", "$\mathbf{Distance}$ $\mathbf{[pc]}$")
-plt.show()
