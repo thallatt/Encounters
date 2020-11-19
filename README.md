@@ -1,4 +1,5 @@
 # Encounters
+Code used in doi:10.3847/1538-3881/ab733; AJ 159:147 2020; https://ui.adsabs.harvard.edu/abs/2020AJ....159..147H/abstract; arXiv:1911.02473.
 Python package for identifying encounter candidates for interstellar objects.
 
 # Documentation
